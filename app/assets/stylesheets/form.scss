@@ -1,0 +1,80 @@
+@import './variables';
+
+.setting-img {
+
+    width: 100%;
+    height: 0;
+    padding-top: calc(298 / 375 * 100%);
+    background: url(sigin-top.png) center center / cover no-repeat;
+    margin-bottom: 35px;
+
+}
+
+label {
+    font-size: 11px;
+    color: $gray-font-color;
+
+}
+
+
+input,select{
+    width: 100%;
+    
+    &.text {
+        padding: 16px 24px;
+        background-color: $gray-font-color;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &.devise-feild {
+        border: none;
+        border-bottom: 1px solid #9E9E9E;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #333333;
+        line-height: 24px;
+    }
+}
+
+textarea {
+    width: 100%;
+    margin: 8px 0px;
+    padding: 8px 8px;
+    min-height: 203px;
+    resize: vertical;
+    border: none;
+    background-color: $gray-font-color;
+    border-radius: 10px;
+}
+
+.field {
+    margin-bottom: 30px;
+
+}
+
+form {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.forgot{
+    text-align: right;
+    color: #CCCCCC;
+    font-size: 11px;
+
+}
+
+.actions {
+    // margin-bottom: 30px;
+    &.mt-large {
+        // margin-top: 130px;
+        margin: 130px 0 30px;
+    }
+
+    &.mt-middle {
+        margin: 90px 0 30px;
+    }
+}
+
