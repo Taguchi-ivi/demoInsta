@@ -1,0 +1,29 @@
+-# %h2 Sign up
+.setting-img
+  -# = image_tag 'sigin-top.png'
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :account, 'Account'
+      %br/
+      = f.text_field :account, autofocus: true, autocomplete: "account", class: 'devise-feild'
+
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-feild'
+    .field
+      = f.label :password
+      -# - if @minimum_password_length
+      -#   %em
+      -#     (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "new-password", class: 'devise-feild'
+    -# .field
+    -#   = f.label :password_confirmation
+    -#   %br/
+    -#   = f.password_field :password_confirmation, autocomplete: "new-password", class: 'devise-feild'
+    .actions.mt-middle
+      = f.submit "CREATE ACCOUNT",class: 'btn-primary'
+  = render "devise/shared/links"

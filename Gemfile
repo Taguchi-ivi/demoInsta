@@ -25,6 +25,25 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Faker
+# https://github.com/faker-ruby/faker
+gem 'faker'
+
+# Hamlよりも早い.使う用
+# 変換コマンド  bundle exec rake haml:replace_erbs
+gem 'hamlit'
+
+# モデルに現在のDB構造をメモする機能
+gem 'annotate'
+
+# エラーメッセージとログの見方
+gem 'better_errors'
+gem 'binding_of_caller'
+
+# ログイン機能実装
+gem 'devise'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -38,8 +57,12 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Haml変換用
+  gem 'erb2haml'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

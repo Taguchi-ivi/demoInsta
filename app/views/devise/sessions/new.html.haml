@@ -1,0 +1,24 @@
+-# %h2 Log in
+.setting-img
+  -# = image_tag 'sigin-top.png'
+.container
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'devise-feild'
+    .field
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "current-password", class: 'devise-feild'
+    -# - if devise_mapping.rememberable?
+    -#   .field
+    -#     = f.check_box :remember_me
+    -#     = f.label :remember_me
+    .forgot
+      - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+        = link_to "Forgot password?", new_password_path(resource_name)
+        %br/
+    .actions.mt-large
+      = f.submit "LOGIN",class: "btn-primary"
+  = render "devise/shared/links"
