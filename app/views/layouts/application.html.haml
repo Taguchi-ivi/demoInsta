@@ -8,4 +8,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if flash.present?
+      .flash
+        - flash.each do |key,val|
+          %div{:class => key}= val
+    -# %p.notice= notice
+    -# %p.alert= alert
     = yield
