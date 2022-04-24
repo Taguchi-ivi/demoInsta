@@ -3,6 +3,8 @@
 @import 'form';
 @import 'button';
 @import 'flash';
+@import 'profile';
+
 
 
 
@@ -40,6 +42,63 @@ a:hover {
 }
 
 .container {
+
     padding: 0 16px;
     width: 100%;
 }
+
+
+.page-header {
+    text-align: center;
+    position: relative;
+    margin-top: 46px;
+}
+
+.back-btn {
+    position: fixed;
+    top: 57px;
+    left: 17px;
+    
+}
+
+// .page-header::before {
+//     font-family: 'Font Awesome 5 Free';
+//     content: "\f177";
+//     position: absolute;
+//     top: 50%;
+//     left: 16px;
+//     margin-top: -12px;
+// }
+
+// .back-btn {
+//     position: absolute;
+//     content: '';
+//     top: 50%;
+//     left: 16px;
+    
+//     width: 16px;
+//     height: 2px;
+    
+// }
+
+// .page-header::before{
+    
+//     content: '';
+//     // top: 50%;
+//     // left: 0;
+//     display: inline-block;
+//     background: url('back.png') no-repeat 0 50% ;
+//     width: 30px;
+//     height: 15px;
+    
+    
+    
+// //     a {
+// //         img{
+// //             width: 16px;
+// //             height: 2px;
+// //             padding: 1.2em;
+// //         }
+// // }
+    
+// }

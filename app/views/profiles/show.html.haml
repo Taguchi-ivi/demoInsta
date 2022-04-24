@@ -1,0 +1,49 @@
+.container
+    %h1.page-header meron349
+    = render 'commons/back'
+    .profile-avatar
+        = image_tag current_user.avatar_image
+    .profile-number
+        .profile-number-item
+            = '44'
+            %br/
+            %p Posts
+        .profile-number-item
+            = '110'
+            %br/
+            %p Followers
+        .profile-number-item
+            = '44'
+            %br/
+            %p Following
+    .profile-content
+        -# .profile-content-left
+        -#     .profile-content-item
+        -#         = image_tag 'pic-1.png'
+        -# .profile-content-right
+        -#     .profile-content-item
+        -#         = image_tag 'pic-2.png'
+        -#     .profile-content-item
+        -#         = image_tag 'pic-3.png'
+        -# .profile-content-left
+        -#     .profile-content-item
+        -#         = image_tag 'pic-4.png'
+        -#     .profile-content-item
+        -#         = image_tag 'pic-5.png'
+        -# .profile-content-right
+        -#     .profile-content-item
+        -#         = image_tag 'pic-6.png'
+        .profile-content-item.big-box-left
+            = image_tag 'pic-1.png'
+        .profile-content-item
+            = image_tag 'pic-2.png'
+        .profile-content-item
+            = image_tag 'pic-3.png'
+        .profile-content-item
+            = image_tag 'pic-4.png'
+        .profile-content-item
+            = image_tag 'pic-5.png'
+        .profile-content-item.big-box-right
+            = image_tag 'pic-6.png'
+        -# 343 * 192
+=  javascript_pack_tag 'imageUpdate'

@@ -1,0 +1,115 @@
+@import './variables';
+
+
+
+
+.profile {
+
+    &-avatar {
+        // text-align: center;
+        margin: 32px auto 0;
+        width: 76px;
+        height: 76px;
+        border-radius: 999px;
+
+        img {
+            padding: 3px;
+            border: 1px solid #E91E63;
+            box-sizing: border-box;
+            border-radius: 999px;
+        }
+    }
+    
+    &-number {
+        margin: 32px auto 0;
+        display: flex;
+        max-width: 300px;
+        width: 100%;
+        justify-content: space-between;
+
+        &-item {
+            color: #333A42;
+            text-align: center;
+
+            p {
+                color: $usugray-font-color;
+                font-size: 14px;
+            }
+        }
+    }
+
+    &-content {
+        max-width: 500px;
+        margin: 42px auto;
+        display: grid;
+        // grid-template-rows: 96px 96px;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(auto-fill, minmax(1710px,1fr));
+        grid-gap: 8px;
+
+        &-item {
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+            
+            &.big-box {
+                img {
+                    height: 96%;
+                    object-fit: cover;
+                }
+                &-left {
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 3;
+                    // width: 96%;
+                    // height: 96%;
+                    // background: #f88;
+                }
+                &-right {
+                    grid-column: 2 / 4;
+                    grid-row: 3 / 5;
+                    // width: 96%;
+                    // height: 96%;
+                    // background: #f88;
+                }
+            }
+
+
+
+            // &.item-1 {
+            //     grid-row: 1 / 3;
+            //     grid-column: 1 / 2;
+            //     background: #f88;
+            // }
+            // &.item-2 {
+            //     grid-row: 1 / 2;
+            //     grid-column: 2 / 3;
+            //     background: #8f8;
+            // }
+            // &.item-3 {
+            //     grid-row: 2 / 3;
+            //     grid-column: 2 / 3;
+            //     background: #88f;
+            // }
+            // &.item-4 {
+            //     grid-row: 1 / 2;
+            //     grid-column: 1 / 2;
+            // }
+            // &.item-5 {
+            //     grid-row: 2 / 3;
+            //     grid-column: 1 / 2;
+            // }
+            // &.item-6 {
+            //     grid-row: 1 / 3;
+            //     grid-column: 2 / 3;
+            // }
+
+
+
+
+        }
+
+    }
+}

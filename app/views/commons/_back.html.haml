@@ -1,0 +1,6 @@
+-# = render 'commons/back'
+- if !current_page?(root_path)
+    .back-btn
+        = link_to :back do
+            -# = image_tag 'back.png'
+            %i.fa-solid.fa-arrow-left-long.fa-2x
