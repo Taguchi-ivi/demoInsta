@@ -2,6 +2,7 @@
     %h1.page-header meron349
     = render 'commons/back'
     .profile-avatar
+        -# %input#input_file{:multiple => "multiple", :type => "file"}/
         = image_tag current_user.avatar_image
     .profile-number
         .profile-number-item
@@ -46,4 +47,5 @@
         .profile-content-item.big-box-right
             = image_tag 'pic-6.png'
         -# 343 * 192
+        -# #profile-show{ data: {profile_id: @profile.id}} profileのidとして 
 =  javascript_pack_tag 'imageUpdate'

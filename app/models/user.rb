@@ -28,6 +28,13 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
+  # avatarをuserモデルに
+  has_one_attached :avatar
+
+
+  def prepare_profile
+    profile || build_profile
+  end
 
   def avatar_image
     if profile&.avatar&.attached?
