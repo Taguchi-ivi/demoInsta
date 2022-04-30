@@ -1,18 +1,16 @@
 @import './variables';
 
 
-
-
 .profile {
 
     &-avatar {
-        // text-align: center;
+        text-align: center;
         margin: 32px auto 0;
-        width: 76px;
-        height: 76px;
         border-radius: 999px;
 
         img {
+            width: 76px;
+            height: 76px;
             padding: 3px;
             border: 1px solid #E91E63;
             box-sizing: border-box;

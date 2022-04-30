@@ -1,9 +1,9 @@
-.container
+.container#profile-show{ data: {user_id: @user.id}}
     %h1.page-header meron349
     = render 'commons/back'
     .profile-avatar
         -# %input#input_file{:multiple => "multiple", :type => "file"}/
-        = image_tag current_user.avatar_image
+        = image_tag current_user.avatar_image(current_user),id: 'top-avatar-img',  data: { type: 'editable' }
     .profile-number
         .profile-number-item
             = '44'
@@ -48,4 +48,12 @@
             = image_tag 'pic-6.png'
         -# 343 * 192
         -# #profile-show{ data: {profile_id: @profile.id}} profileのidとして 
+    -# ajaxのみで作成出来たので不要になった
+    -# = form_with(url: profile_path, method: 'put', local: true) do |f|
+    -#     %div
+    -#         = f.label :avatar, 'こちらからどうぞ'
+    -#     %div
+    -#         = f.file_field :avatar
+    -#     %div
+    -#         = f.submit class: 'btn-pramary'
 =  javascript_pack_tag 'imageUpdate'
