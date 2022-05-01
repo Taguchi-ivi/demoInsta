@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates :account, presence: true, uniqueness: true
 
   has_one :profile, dependent: :destroy
+  has_many :articles, dependent: :destroy
 
   # avatarをuserモデルに
   has_one_attached :avatar

@@ -1,0 +1,50 @@
+-# INDEX
+.container
+    .page-insta
+        = image_tag 'insta-mark.png'
+    .article-item
+        .article-item-wrapper
+            .article-item-left
+                = image_tag 'def-avatar'
+            .article-item-right
+                %p Jmax_21
+                %p 3 hours ago
+        -# .article-item-swiper
+        -#     .article-item-swiper-img
+        -#         = image_tag 'Rectangle.png'
+        -#     .article-item-swiper-img
+        -#         = image_tag 'Rectangle-1.png'
+        -#     .article-item-swiper-img
+        -#         = image_tag 'Rectangle-2.png'
+        .swiper
+            / Additional required wrapper
+            .swiper-wrapper
+                / Slides
+                .swiper-slide
+                    = image_tag 'Rectangle.png'
+                .swiper-slide
+                    = image_tag 'Rectangle-1.png'
+                .swiper-slide 
+                    = image_tag 'Rectangle-2.png'
+            / If we need pagination
+            .swiper-pagination
+            / If we need navigation buttons
+            .swiper-button-prev
+            .swiper-button-next
+            / If we need scrollbar
+            .swiper-scrollbar
+        .article-item-wrapper
+            .article-item-mark
+                = image_tag 'heart.png'
+            .article-item-mark
+                = image_tag 'comment-mark.png'
+            .article-item-mark
+                = image_tag 'link-mark.png'
+        .article-item-text
+            %p aaaaaaaaaaaaaaaaaaaaaaaa
+
+    .article-create
+        = link_to new_article_path do
+            %i.fa-solid.fa-comment-plus
+
+=  javascript_pack_tag 'article'
