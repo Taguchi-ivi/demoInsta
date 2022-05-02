@@ -8,6 +8,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
+    -# swiper
+    %link{:href => "https://unpkg.com/swiper@8/swiper-bundle.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://unpkg.com/swiper@8/swiper-bundle.min.js"}
+
     -# font awesome
     %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", :rel => "stylesheet"}/
   %body

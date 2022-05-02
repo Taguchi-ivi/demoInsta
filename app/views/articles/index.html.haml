@@ -7,15 +7,8 @@
             .article-item-left
                 = image_tag 'def-avatar'
             .article-item-right
-                %p Jmax_21
-                %p 3 hours ago
-        -# .article-item-swiper
-        -#     .article-item-swiper-img
-        -#         = image_tag 'Rectangle.png'
-        -#     .article-item-swiper-img
-        -#         = image_tag 'Rectangle-1.png'
-        -#     .article-item-swiper-img
-        -#         = image_tag 'Rectangle-2.png'
+                %p.article-item-right-name Jmax_21
+                %p.article-item-right-time 3 hours ago
         .swiper
             / Additional required wrapper
             .swiper-wrapper
@@ -33,7 +26,7 @@
             .swiper-button-next
             / If we need scrollbar
             .swiper-scrollbar
-        .article-item-wrapper
+        .article-item-wrapper.mt-mark
             .article-item-mark
                 = image_tag 'heart.png'
             .article-item-mark
@@ -42,9 +35,8 @@
                 = image_tag 'link-mark.png'
         .article-item-text
             %p aaaaaaaaaaaaaaaaaaaaaaaa
-
     .article-create
         = link_to new_article_path do
-            %i.fa-solid.fa-comment-plus
+            %i.fa-solid.fa-circle-plus.fa-3x
 
-=  javascript_pack_tag 'article'
+=  javascript_pack_tag 'articleIndex'

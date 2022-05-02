@@ -1,20 +1,22 @@
 .container
-    .article-edit-wrapper
-        .article-edit-wrapper-left
-            = link_to 'Cancel', root_path 
-        .article-edit-wrapper-center
-            %h2 Status
-        .article-edit-wrapper-right
-            %p Post
-    .article-edit-user
-        .article-edit-user-avatar
-            = image_tag 'def-avatar.png'
-        .article-edit-user-name
-            %p Jackie Chan
-    .article-edit-form
-        = form_with(url: articles_path, method: 'post', local: true ) do |f|
+    = form_with(url: articles_path, method: 'post', local: true ) do |f|
+        .article-edit-wrapper
+            .article-edit-wrapper-left
+                = link_to 'Cancel', root_path 
+            .article-edit-wrapper-center
+                %h2 Status
+            .article-edit-wrapper-right
+                -# %p Post
+                -# = f.submit 'Post', class: 'btn-article-post'
+                = link_to 'Post', articles_path, data: { method: 'post', confirm: '投稿してもよろしいですか？' }
+        .article-edit-user
+            .article-edit-user-avatar
+                = image_tag 'def-avatar.png'
+            .article-edit-user-name
+                %p Jackie Chan
+        .article-edit-form
             .article-edit-form-content
-                = f.text_field :content
+                = f.text_field :content, :placeholder => "What's on your mind ?"
             .article-edit-form-img
                 = f.file_field :images
 
