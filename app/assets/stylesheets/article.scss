@@ -1,0 +1,195 @@
+@import './variables';
+
+/*=====================================================================
+# index
+===================================================================== */
+
+.page-insta {
+    margin-top: 48px;
+    margin-bottom: 40px;
+
+    img {
+        // height: 16px;
+        // width: 20px;
+    }
+}
+
+.article {
+
+    &-item {
+        // margin-top: 36px;
+        margin-bottom: 36px;
+    
+        &-wrapper {
+            display: flex;
+
+            &.mt-mark {
+                margin-top: 12px;
+            }
+        }
+    
+        &-left {
+            img {
+                height: 30px;
+                width: 30px;
+                border-radius: 999px;
+            }
+        }
+    
+        &-right {
+            // text-align: center;
+            // margin: auto 8px;
+            margin: auto 12px;
+    
+            &-name {
+                font-size: 14px;
+                line-height: 16px;
+                color: $black-font-color;
+            }
+    
+            &-time {
+                color: $usugray-font-color;
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    
+        &-mark {
+            margin-right: 14px;
+    
+        }
+
+    
+        &-mark:last-child{
+            margin-right: 0px;
+        }
+
+        &-text {
+            margin-top: 10px;
+            font-size: 12px;
+            color: $black-font-color;
+            line-height: 14px;
+        }
+    }
+
+    &-create {
+        position: fixed;
+        z-index: 10;
+        bottom: 40px;
+        right: 40px;
+
+    }
+}
+
+
+.swiper {
+    margin-top: 11px;
+    
+    &-wrapper {
+        // height: 225px;
+    }
+    &-slide {
+        // height: 225px;
+        img {
+            width: 98%;
+            height: auto;
+            
+        }
+    }
+}
+
+
+
+
+/*=====================================================================
+# new
+===================================================================== */
+
+.article-edit {
+    &-wrapper {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        line-height: 18px;
+        &-left {
+            &-back {
+                color: $blue-font-color ;
+    
+            }
+        }
+    
+        &-center {
+            color: #333A42;
+    
+        }
+    
+        &-right {
+            &-post {
+                // color: #BDBDBD;
+                color: $blue-font-color ;
+                border: none;
+                background-color: #fff;
+                font-size: 16px;
+                // padding: 1.2em;
+
+            }
+        }
+    }
+
+
+    &-user {
+        margin-top: 40px;
+        display: flex;
+
+        &-avatar {
+
+            img {
+                height: 40px;
+                width: 40px;
+                border-radius: 999px;
+
+            }
+
+        }
+
+        &-name {
+            margin: auto 18px;
+
+            p {
+                color: $black-font-color;
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: 400;
+
+            }
+
+        }
+    }
+
+    &-form {
+        margin-top: 30px;
+
+        &-content {
+            padding: 8px;
+            input {
+                font-size: 16px;
+                line-height: 24px;
+                border: none;
+                border-bottom: 1px solid $usugray-font-color;
+
+            }
+        }
+
+        &-img {
+            margin-top: 24px;
+
+        }
+
+    }
+}
+
+
+.disabled_class{
+    color: #BDBDBD;
+}

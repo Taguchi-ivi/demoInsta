@@ -1,0 +1,51 @@
+-# INDEX
+.container
+    .page-insta
+        = image_tag 'insta-mark.png'
+    - @articles.each do |article|
+        .article-item
+            .article-item-wrapper
+                .article-item-left
+                    -# = image_tag 'def-avatar'
+                    = image_tag article.user.avatar_image(article.user)
+                .article-item-right
+                    -# %p.article-item-right-name Jmax_21
+                    -# %p.article-item-right-time 3 hours ago
+                    %p.article-item-right-name=article.user.account
+                    %p.article-item-right-time=article.updated_at
+            - if article.images.present?
+                .swiper
+                    / Additional required wrapper
+                    .swiper-wrapper
+                        - article.images.each do |image|
+                            / Slides
+                            -# .swiper-slide
+                            -#     = image_tag 'Rectangle.png'
+                            -# .swiper-slide
+                            -#     = image_tag 'Rectangle-1.png'
+                            -# .swiper-slide 
+                            -#     = image_tag 'Rectangle-2.png'
+                            .swiper-slide 
+                                = image_tag image
+                    / If we need pagination
+                    .swiper-pagination
+                    / If we need navigation buttons
+                    .swiper-button-prev
+                    .swiper-button-next
+                    / If we need scrollbar
+                    .swiper-scrollbar
+            .article-item-wrapper.mt-mark
+                .article-item-mark
+                    = image_tag 'heart.png'
+                .article-item-mark
+                    = image_tag 'comment-mark.png'
+                .article-item-mark
+                    = image_tag 'link-mark.png'
+            .article-item-text
+                -# %p aaaaaaaaaaaaaaaaaaaaaaaa
+                %p= article.content
+    .article-create
+        = link_to new_article_path do
+            %i.fa-solid.fa-circle-plus.fa-3x
+
+=  javascript_pack_tag 'articleIndex'

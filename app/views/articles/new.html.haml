@@ -1,0 +1,33 @@
+.container
+    = form_with(model: @article, url: articles_path, method: 'post', local: true ) do |f|
+        .article-edit-wrapper
+            .article-edit-wrapper-left
+                = link_to 'Cancel', root_path, class: 'article-edit-wrapper-left-back' 
+            .article-edit-wrapper-center
+                %h2 Status
+            .article-edit-wrapper-right
+                -# %p Post
+                -# = f.submit 'Post', class: 'btn-article-post'
+                -# = link_to 'Post', articles_path, class: 'article-edit-wrapper-right-post' ,data: { method: 'post', confirm: '投稿してもよろしいですか？' }
+                = f.submit 'Post', class: 'article-edit-wrapper-right-post'
+        %ul
+            - @article.errors.full_messages.each do |message|
+                %li= message
+        .article-edit-user
+            .article-edit-user-avatar
+                -# = image_tag 'def-avatar.png'
+                = image_tag @article.user.avatar_image(@article.user)
+            .article-edit-user-name
+                -# %p Jackie Chan
+                %p=@article.user.account
+        .article-edit-form
+            .article-edit-form-content
+                = f.text_field :content, class:'article-edit-form-text' , :placeholder => "What's on your mind ?",:required => ""
+            .article-edit-form-img
+                = f.file_field :images, multiple: true
+
+-# jqueryがうまく実装されていない？
+=  javascript_pack_tag 'articleNew'
+
+
+

@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   # devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root to: "home#index"
+  # root to: "home#index"
+  root to: "articles#index"
 
   # devise controllerへの設定
   devise_for :users, controllers: {
@@ -11,5 +12,8 @@ Rails.application.routes.draw do
   }
   get '/users/sign_out' => 'devise/sessions#destroy'
 
-  resource :profile, only: [:show, :update, :create, :destroy]
+  resources :articles, only: [:index, :new, :create]
+
+  # resource :profile, only: [:show, :update, :create, :destroy]
+  resource :profile, only: [:show, :update]
 end

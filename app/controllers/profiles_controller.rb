@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
     before_action :authenticate_user!
     # after_action :set_csrf_token_header
     skip_before_action :verify_authenticity_token
+    
 
     def show
         @user = current_user
