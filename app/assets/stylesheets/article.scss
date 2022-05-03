@@ -6,6 +6,7 @@
 
 .page-insta {
     margin-top: 48px;
+    margin-bottom: 40px;
 
     img {
         // height: 16px;
@@ -16,7 +17,8 @@
 .article {
 
     &-item {
-        margin-top: 36px;
+        // margin-top: 36px;
+        margin-bottom: 36px;
     
         &-wrapper {
             display: flex;
@@ -35,8 +37,9 @@
         }
     
         &-right {
-            text-align: center;
-            margin: auto 8px;
+            // text-align: center;
+            // margin: auto 8px;
+            margin: auto 12px;
     
             &-name {
                 font-size: 14px;
@@ -71,6 +74,7 @@
 
     &-create {
         position: fixed;
+        z-index: 10;
         bottom: 40px;
         right: 40px;
 
@@ -85,7 +89,7 @@
         // height: 225px;
     }
     &-slide {
-        height: 225px;
+        // height: 225px;
         img {
             width: 98%;
             height: auto;
@@ -108,21 +112,31 @@
         justify-content: space-between;
         font-size: 16px;
         line-height: 18px;
+        &-left {
+            &-back {
+                color: $blue-font-color ;
+    
+            }
+        }
+    
+        &-center {
+            color: #333A42;
+    
+        }
+    
+        &-right {
+            &-post {
+                // color: #BDBDBD;
+                color: $blue-font-color ;
+                border: none;
+                background-color: #fff;
+                font-size: 16px;
+                // padding: 1.2em;
+
+            }
+        }
     }
 
-    &-left {
-        color: $blue-font-color;
-    }
-
-    &-center {
-        color: #333A42;
-    }
-
-    &-right {
-        
-        color: #BDBDBD;
-
-    }
 
     &-user {
         margin-top: 40px;
@@ -173,4 +187,9 @@
         }
 
     }
+}
+
+
+.disabled_class{
+    color: #BDBDBD;
 }

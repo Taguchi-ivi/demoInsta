@@ -31,7 +31,7 @@ const myswiper = new Swiper(".swiper", {
 // })
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('hello');
+    // console.log('hello');
     myswiper();
 })
 
