@@ -40,7 +40,10 @@
                 .article-item-mark
                     = image_tag 'comment-mark.png'
                 .article-item-mark
-                    = image_tag 'link-mark.png'
+                    -# = image_tag 'link-mark.png'
+                    -# = link_to "https://twitter.com/share?url=#{request.url}" do
+                    = link_to "https://twitter.com/intent/tweet?text=#{article.content}" do
+                        = image_tag 'link-mark.png'
             .article-item-text
                 -# %p aaaaaaaaaaaaaaaaaaaaaaaa
                 %p= article.content
