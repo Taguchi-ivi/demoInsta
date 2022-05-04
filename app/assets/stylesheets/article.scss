@@ -8,10 +8,10 @@
     margin-top: 48px;
     margin-bottom: 40px;
 
-    img {
-        // height: 16px;
-        // width: 20px;
-    }
+    // img {
+    //     // height: 16px;
+    //     // width: 20px;
+    // }
 }
 
 .article {
@@ -85,9 +85,9 @@
 .swiper {
     margin-top: 11px;
     
-    &-wrapper {
-        // height: 225px;
-    }
+    // &-wrapper {
+    //     // height: 225px;
+    // }
     &-slide {
         // height: 225px;
         img {
@@ -190,6 +190,7 @@
 }
 
 
+// postするさいに、contentに値が入っていない場合の文字色
 .disabled_class{
     color: #BDBDBD;
 }
