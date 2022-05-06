@@ -3,7 +3,7 @@
     .page-insta
         = image_tag 'insta-mark.png'
     - @articles.each do |article|
-        .article-item
+        .article-item#article-index{ data: { article_id: article.id } }
             .article-item-wrapper
                 .article-item-left
                     -# = image_tag 'def-avatar'
@@ -36,7 +36,10 @@
                     .swiper-scrollbar
             .article-item-wrapper.mt-mark
                 .article-item-mark
-                    = image_tag 'heart.png'
+                    .article-item-mark-heart.hidden.active-heart
+                        = image_tag 'heart-active.png'
+                    .article-item-mark-heart.hidden.inactive-heart
+                        = image_tag 'heart.png'
                 .article-item-mark
                     = image_tag 'comment-mark.png'
                 .article-item-mark

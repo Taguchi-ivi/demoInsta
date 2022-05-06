@@ -3,6 +3,9 @@
 // import styles bundle
 // import 'swiper/css/bundle';
 
+import $ from 'jquery'
+// import axios from 'axios' 
+import axios from 'module/axios'
 
 // init Swiper:
 const myswiper = new Swiper(".swiper", {
@@ -25,13 +28,80 @@ const myswiper = new Swiper(".swiper", {
     }
 });
 
-// document.addEventListener('turbolinks:load', () => {
-//     console.log('aaaaaaaa')
-//     swiper();
-// })
+const handleHeartDisplay = (hasLiked) => {
+    if (hasLiked) {
+        $('.active-heart').removeClass('hidden')
+    } else {
+        $('.inactive-heart').removeClass('hidden')
+    }
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // console.log('hello');
+document.addEventListener('turbolinks:load', () => {
+    // console.log('aaaaaaaa')
     myswiper();
+
+
+    // const allDataset = $('#article-index').data()
+    const allDataset = $('#article-index')
+
+    // debugger
+    allDataset.forEach(article => {
+        const dataset = article.data()
+        const articleId = dataset.articleId
+
+        if(articleId) {
+            // ここから明日考える
+        }
+    })
+
+    // const dataset = $('#article-index').data()
+    // const articleId = dataset.articleId
+    axios.get(`/articles/${articleId}/like`)
+    .then((response) => {
+        // console.log(response)
+        const hasLiked = response.data.hasLiked
+        handleHeartDisplay(hasLiked)
+    })
+
+
+    // post
+    $('.inactive-heart').on('click', () => {
+        axios.post(`/articles/${articleId}/like`)
+        .then((response) => {
+            // console.log(response)
+            if(response.data.status === 'ok') {
+                $('.active-heart').removeClass('hidden')
+                $('.inactive-heart').addClass('hidden')
+            }
+        })
+        .catch((e) => {
+            window.alert('ERROR')
+            console.log(e)
+        })
+    })
+
+    // delete
+    $('.active-heart').on('click', () => {
+        axios.delete(`/articles/${articleId}/like`)
+        .then((response) => {
+            // console.log(response)
+            if(response.data.status === 'ok') {
+                $('.active-heart').addClass('hidden')
+                $('.inactive-heart').removeClass('hidden')
+            }
+        })
+        .catch((e) => {
+            window.alert('ERROR')
+            console.log(e)
+        })
+    })
+
+
+
 })
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     // console.log('hello');
+//     myswiper();
+// })
 

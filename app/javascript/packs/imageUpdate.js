@@ -1,6 +1,8 @@
 
 import $ from 'jquery'
-import axios from 'axios'
+// import axios from 'axios'
+import axios from 'module/axios'
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('turbolinks:load', () => {
