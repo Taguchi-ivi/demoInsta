@@ -1,0 +1,94 @@
+@import './variables';
+
+
+
+.comment {
+    margin-top: 52px;
+    
+    &-item {
+        margin-bottom: 32px;
+    
+        &-wrapper {
+            display: flex;
+        }
+    
+        &-left {
+            margin-top: 7px;
+            img {
+                height: $icon-def-size - 8px;
+                width: $icon-def-size - 8px;
+                border-radius: 999px;
+            }
+        }
+    
+        &-right {
+            margin-left: 14px;
+    
+            &-name {
+                font-size: 16px;
+                color: #414040;
+                font-weight: 400;
+                line-height: 24px;
+            }
+            
+            &-content {
+                margin-top: 6px;
+                font-size: 14px;
+                color: #9B9B9B;
+                font-weight: 400;
+                line-height: 20px;
+    
+            }
+        }
+    }
+}
+
+.comment-form {
+    z-index: 11px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    // left: 50%;
+    // width: 100%;
+    // margin: 0 auto;
+
+    
+    &-box {
+        // border: 1px #000 solid;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        padding: 10px;
+
+        &-left {
+            // margin: auto 20px;
+            // vertical-align: middle;
+            
+            margin: auto 4%;
+            
+        }
+
+        &-right{
+            margin: auto 0;
+            height: 100%;
+            width: 100%;
+
+            input {
+                border: none;
+                padding: 8px;
+            }
+        }
+
+        &-right2 {
+            margin-left: auto;
+            margin-right: 4%;
+
+            input {
+                display: inline-block;
+                border-radius: 30px;
+                padding: 6px 6px;
+            }
+        }
+    }
+}

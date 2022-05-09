@@ -41,7 +41,9 @@
                     .article-item-mark-heart.hidden.inactive-heart
                         = image_tag 'heart.png'
                 .article-item-mark
-                    = image_tag 'comment-mark.png'
+                    -# = link_to new_article_comment_path(article) do 
+                    = link_to article_comments_path(article) do 
+                        = image_tag 'comment-mark.png'
                 .article-item-mark
                     -# = image_tag 'link-mark.png'
                     -# = link_to "https://twitter.com/share?url=#{request.url}" do

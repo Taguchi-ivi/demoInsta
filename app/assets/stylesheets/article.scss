@@ -30,8 +30,8 @@
     
         &-left {
             img {
-                height: 30px;
-                width: 30px;
+                height: $icon-def-size - 10px;
+                width: $icon-def-size -10px;
                 border-radius: 999px;
             }
         }
@@ -145,8 +145,8 @@
         &-avatar {
 
             img {
-                height: 40px;
-                width: 40px;
+                height: $icon-def-size;
+                width: $icon-def-size;
                 border-radius: 999px;
 
             }
@@ -179,6 +179,13 @@
                 border-bottom: 1px solid $usugray-font-color;
 
             }
+            // textarea {
+            //     font-size: 16px;
+            //     line-height: 24px;
+            //     border: none;
+            //     border-bottom: 1px solid $usugray-font-color;
+            //     background-color: #fff;
+            // }
         }
 
         &-img {
