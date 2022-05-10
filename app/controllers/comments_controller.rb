@@ -4,7 +4,9 @@ class CommentsController < ApplicationController
     def index
         @article = Article.find(params[:article_id])
         # @comment = article.comments.build
-        @comment = @article.comments
+        comment = @article.comments
+
+        render json: comment, include: [:user]
     end
 
     def new
