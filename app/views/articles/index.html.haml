@@ -12,7 +12,8 @@
                     -# %p.article-item-right-name Jmax_21
                     -# %p.article-item-right-time 3 hours ago
                     %p.article-item-right-name=article.user.account
-                    %p.article-item-right-time=article.updated_at
+                    -# %p.article-item-right-time=article.updated_at
+                    %p.article-item-right-time=article.display_created_at
             - if article.images.present?
                 .swiper
                     / Additional required wrapper
