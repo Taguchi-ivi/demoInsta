@@ -5,7 +5,8 @@
     -# %ul
     -#     - @comment.errors.full_messages.each do |message|
     -#         %li= message
-    .comment#comment-index{ data: { article_id: @article.id } }
+    -# .comment#comment-index{ data: { article_id:  @article.id, user_id: current_user.id } }
+    .comment#comment-index{ data: { article_id:  @article.id } }
         -# - @comment.each do |comment|
         -#     .comment-item
         -#         .comment-item-wrapper
@@ -16,14 +17,13 @@
         -#                     = comment.article.user.account
         -#                 .comment-item-right-content
         -#                     = comment.content
-    = form_with(model: @comment, url: article_comments_path(article_id: @article.id) , method: 'post', local: true ) do |f|
-        .comment-form
-            .comment-form-box
-                .comment-form-box-left
-                    = image_tag 'comment-mark.png'
-                .comment-form-box-right
-                    = f.text_field :content
-                .comment-form-box-right2
-                    = f.submit '保存', class: 'btn btn-primary'
+    .comment-form
+        .comment-form-box
+            .comment-form-box-left
+                = image_tag 'comment-mark.png'
+            .comment-form-box-right
+                = text_field :comment_content, '', class: 'comment-content'
+            -# .comment-form-box-right2
+                -# = f.submit '保存', class: 'btn btn-primary'
 
 =  javascript_pack_tag 'comment'

@@ -13,6 +13,7 @@
                     -# %p.article-item-right-time 3 hours ago
                     %p.article-item-right-name=article.user.account
                     -# %p.article-item-right-time=article.updated_at
+                    -# %time(datetime="#{article.created_at}")= time_ago_in_words(article.created_at)
                     %p.article-item-right-time=article.display_created_at
             - if article.images.present?
                 .swiper
