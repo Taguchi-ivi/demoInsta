@@ -12,7 +12,9 @@
                     -# %p.article-item-right-name Jmax_21
                     -# %p.article-item-right-time 3 hours ago
                     %p.article-item-right-name=article.user.account
-                    %p.article-item-right-time=article.updated_at
+                    -# %p.article-item-right-time=article.updated_at
+                    -# %time(datetime="#{article.created_at}")= time_ago_in_words(article.created_at)
+                    %p.article-item-right-time=article.display_created_at
             - if article.images.present?
                 .swiper
                     / Additional required wrapper
@@ -41,11 +43,13 @@
                     .article-item-mark-heart.hidden.inactive-heart
                         = image_tag 'heart.png'
                 .article-item-mark
-                    = image_tag 'comment-mark.png'
+                    -# = link_to new_article_comment_path(article) do 
+                    = link_to article_comments_path(article) do 
+                        = image_tag 'comment-mark.png'
                 .article-item-mark
                     -# = image_tag 'link-mark.png'
                     -# = link_to "https://twitter.com/share?url=#{request.url}" do
-                    = link_to "https://twitter.com/intent/tweet?text=#{article.content}" do
+                    = link_to "https://twitter.com/intent/tweet?url=#{request.url}&text=#{article.content}" do
                         = image_tag 'link-mark.png'
             .article-item-text
                 -# %p aaaaaaaaaaaaaaaaaaaaaaaa

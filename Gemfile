@@ -45,6 +45,8 @@ gem 'binding_of_caller'
 # ログイン機能実装
 gem 'devise'
 
+# Serializer jsonデータを取得
+gem 'active_model_serializers'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

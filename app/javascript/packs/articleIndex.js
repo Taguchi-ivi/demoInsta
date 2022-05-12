@@ -38,8 +38,8 @@ const handleHeartDisplay = (hasLiked, articleNum) => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-// document.addEventListener('turbolinks:load', () => {
+// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
     // console.log('aaaaaaaa')
     // myswiper();
     myswiper

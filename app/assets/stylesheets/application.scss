@@ -5,6 +5,7 @@
 @import 'flash';
 @import 'profile';
 @import 'article';
+@import 'comment';
 
 
 
@@ -65,6 +66,23 @@ a:hover {
 
 .hidden {
     display: none;
+}
+
+.header-logout {
+    position: fixed;
+    z-index: 20px;
+    top: 30px;
+    right: 40px;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
+    border-radius: 80px;
+    background-color: #b1bdd6;
+    display: block;
+    // padding: 10px 0;
+    a {
+        display: block;
+        padding: 10px 15px;
+    }
+
 }
 
 // .page-header::before {

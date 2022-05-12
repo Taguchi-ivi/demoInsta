@@ -14,6 +14,7 @@
 #
 # Indexes
 #
+#  index_users_on_account               (account) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
@@ -28,6 +29,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
   # avatarをuserモデルに
