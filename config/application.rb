@@ -38,6 +38,9 @@ module DemoInsta
 
     routes.default_url_options[:host] = 'http://localhost:3000' # 追加
 
+    # sidekiq
+    config.active_job.queue_adapter = :sidekiq
+
 
     # Don't generate system test files.
     config.generators.system_tests = nil

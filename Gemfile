@@ -48,6 +48,9 @@ gem 'devise'
 # Serializer jsonデータを取得
 gem 'active_model_serializers'
 
+# 非同期処理
+gem 'sidekiq'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -66,6 +69,12 @@ group :development do
 
   # Haml変換用
   gem 'erb2haml'
+  
+  # Mailer 送信したメール内容を分かりやすく表示してくれる
+  gem 'letter_opener'
+
+  # Mailer 送信したメール内容をweb上で分かりやすく表示する
+  gem 'letter_opener_web', '~> 1.0'
 
 end
 

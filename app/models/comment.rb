@@ -20,4 +20,11 @@ class Comment < ApplicationRecord
     belongs_to :user
     validates :content, presence: true
 
+    after_create :send_email
+
+    private 
+        def send_email
+            # CommentMailer.new_comment(User.first, User.second, 3).deliver_now
+            CommentMailer.new_comment(User.first, User.second, 3).deliver_later
+        end
 end
