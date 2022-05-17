@@ -24,7 +24,14 @@ class Comment < ApplicationRecord
 
     private 
         def send_email
-            # CommentMailer.new_comment(User.first, User.second, 3).deliver_now
-            CommentMailer.new_comment(User.first, User.second, 3).deliver_later
+            comment = self
+            users = User.all
+            users.each do |user|
+                if self.content.include?("@#{user.account}")
+                    # CommentMailer.new_comment(User.first, User.second, 3).deliver_now
+                    # CommentMailer.new_comment(user, @comment.comment_id).deliver_later
+                    CommentMailer.new_comment(user, comment).deliver_later
+                end
+            end
         end
 end

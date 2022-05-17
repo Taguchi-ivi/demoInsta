@@ -31,6 +31,7 @@ class CommentsController < ApplicationController
         # ajax
         # comment = article.comments.build(comment_params)
         comment = current_user.comments.build(comment_params)
+        @comment = current_user.comments.build(comment_params)
         comment.save!
         render json: comment, include: [:user]
 
