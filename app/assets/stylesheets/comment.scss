@@ -7,6 +7,7 @@
     
     &-item {
         margin-bottom: 32px;
+        z-index: 1;
     
         &-wrapper {
             display: flex;
@@ -29,6 +30,8 @@
                 color: #414040;
                 font-weight: 400;
                 line-height: 24px;
+                z-index: 1;
+
             }
             
             &-content {
@@ -37,6 +40,8 @@
                 color: #9B9B9B;
                 font-weight: 400;
                 line-height: 20px;
+                z-index: 1;
+
     
             }
         }
@@ -44,12 +49,12 @@
 }
 
 .comment-form {
-    z-index: 11px;
     position: fixed;
     bottom: 30px;
     left: 50%;
     width: 80%;
     transform: translateX(-50%);
+    z-index: 20;
     // left: 50%;
     // width: 100%;
     // margin: 0 auto;
@@ -60,16 +65,18 @@
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
         display: flex;
         padding: 10px;
+        z-index: 20;
 
         &-left {
             // margin: auto 20px;
             // vertical-align: middle;
-            
+            z-index: 20;
             margin: auto 4%;
             
         }
 
         &-right{
+            z-index: 20;
             margin: auto 0;
             height: 100%;
             width: 100%;

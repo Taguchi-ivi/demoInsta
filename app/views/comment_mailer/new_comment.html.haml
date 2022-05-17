@@ -1,0 +1,10 @@
+%p #{@user.account} 様
+
+%p 以下のユーザーからコメントが来ました。
+%p #{@comment.user.account} より
+
+%p 内容
+%p #{@comment.content}
+
+-# = link_to 'プロフィールを確認する', account_url(@user)
+= link_to 'コメントを確認する', article_comments_url(article_id: @comment.article_id), target: :_blank
