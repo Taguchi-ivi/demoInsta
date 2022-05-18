@@ -18,7 +18,9 @@ const addComment = (commentItem) => {
         `<div class="comment-item">
             <div class="comment-item-wrapper">
                 <div class="comment-item-left">
-                    <img src=${commentItem.user.avatar_url} >
+                    <a href="/accounts/${commentItem.user.id}">
+                        <img src=${commentItem.user.avatar_url} >
+                    </a>
                 </div>
                 <div class="comment-item-right">
                     <div class="comment-item-right-name">

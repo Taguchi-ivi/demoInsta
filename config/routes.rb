@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :index]
   end
 
+  resources :accounts, only: [:show]
+
   # resource :profile, only: [:show, :update, :create, :destroy]
   resource :profile, only: [:show, :update]
 end
