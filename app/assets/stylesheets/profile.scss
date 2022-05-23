@@ -32,6 +32,10 @@
             &-unfollow {
                 color: $gray-font-color-disable;
             }
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 

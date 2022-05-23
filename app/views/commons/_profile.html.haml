@@ -8,10 +8,11 @@
         -# - if current_page?(account_path(user)) 
         - if user != current_user
             .profile-warapper-right
-                - if current_user&.has_followed?(user)
-                    = link_to 'UnFollow', account_unfollows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-unfollow'
-                - else
-                    = link_to 'Follow', account_follows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-follow'
+                - if current_user.present?
+                    -# = link_to 'UnFollow', account_unfollows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-unfollow hidden'
+                    -# = link_to 'Follow', account_follows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-follow hidden'
+                    %p.profile-warapper-right-unfollow.hidden UnFollow
+                    %p.profile-warapper-right-follow.hidden Follow
     .page-header-right
     - if user_signed_in? 
         -if current_page?(profile_path)
@@ -53,3 +54,4 @@
                         = image_tag image
                 - i += 1
 =  javascript_pack_tag 'imageUpdate'
+=  javascript_pack_tag 'follow'

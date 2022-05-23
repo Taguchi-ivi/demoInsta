@@ -4,11 +4,10 @@ class FollowsController < ApplicationController
 
     def create
         current_user.follow!(params[:account_id])
-        redirect_to account_path(params[:account_id])
-    end
+        user = User.find(params[:account_id])
+        follower_count = user.followers.count
 
-    # ajax用 follow関係を確認する
-    def edit
-
+        # redirect_to account_path(params[:account_id])
+        render json: { status: 'ok', followerCount: follower_count }
     end
 end
