@@ -53,13 +53,20 @@ class User < ApplicationRecord
 
   # フォローする
   def follow!(user)
-    following_relationships.create!(following_id: user.id)
+    user_id = get_user_id(user)
+    following_relationships.create!(following_id:  user_id)
   end
 
   # フォローを解除する
   def unfollow!(user)
-    relation = following_relationships.find_by!(following_id: user.id)
-    ralation.destroy!
+    user_id = get_user_id(user)
+    relation = following_relationships.find_by!(following_id: user_id)
+    relation.destroy!
+  end
+
+  #  フォローしているか確認する
+  def has_followed?(user)
+    following_relationships.exists?(following_id: user.id)
   end
 
   def avatar_image(user)
@@ -70,5 +77,14 @@ class User < ApplicationRecord
       'def-avatar.png'
     end
   end
+
+  private 
+    def get_user_id(user)
+      if user.is_a?(User)
+        user.id
+      else
+        user
+      end
+    end
 
 end

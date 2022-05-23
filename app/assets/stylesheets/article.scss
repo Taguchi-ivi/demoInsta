@@ -126,7 +126,6 @@
     
         &-right {
             &-post {
-                // color: #BDBDBD;
                 color: $blue-font-color ;
                 border: none;
                 background-color: #fff;
@@ -199,5 +198,5 @@
 
 // postするさいに、contentに値が入っていない場合の文字色
 .disabled_class{
-    color: #BDBDBD;
+    color: $gray-font-color-disable;
 }

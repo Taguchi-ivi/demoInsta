@@ -2,6 +2,39 @@
 
 .profile {
 
+    &-warapper {
+        display: flex;
+        margin-top: 46px;
+        
+
+        &-left {
+            // padding: 0;
+            text-align: left;
+        }
+
+        &-center {
+            text-align: center;
+            margin: 0 auto;
+            // padding: 0;
+            font-size: 16px;
+            color: #333A42;
+        }
+
+        &-right {
+            // margin-left: auto;
+            text-align: right;
+            padding: 0;
+
+            &-follow {
+                color: $blue-font-color;
+            }
+
+            &-unfollow {
+                color: $gray-font-color-disable;
+            }
+        }
+    }
+
     &-avatar {
         text-align: center;
         margin: 32px auto 0;
