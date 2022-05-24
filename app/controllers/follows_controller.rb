@@ -1,6 +1,10 @@
 class FollowsController < ApplicationController
 
-    before_action :authenticate_user!
+    before_action :authenticate_user!, only:[ :create]
+
+    def index
+        user = User.find(params[:account_id])
+    end
 
     def create
         current_user.follow!(params[:account_id])

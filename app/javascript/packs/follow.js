@@ -18,12 +18,12 @@ const countUpdate = (res) => {
     $('.profile-number-item.post').append(
         `<br><p>Posts</p>`
     )
-    $('.profile-number-item.follower').text(res.data.followerCount)
-    $('.profile-number-item.follower').append(
+    $('.profile-number-item-follower').text(res.data.followerCount)
+    $('.profile-number-item-follower').append(
         `<br><p>Followers</p>`
     )
-    $('.profile-number-item.following').text(res.data.followingCount)
-    $('.profile-number-item.following').append(
+    $('.profile-number-item-following').text(res.data.followingCount)
+    $('.profile-number-item-following').append(
         `<br><p>Following</p>`
     )
 }
@@ -84,8 +84,8 @@ document.addEventListener('turbolinks:load', () => {
                 if(response.data.status === 'ok') {
                     $(`.profile-warapper-right-follow`).removeClass('hidden')
                     $(`.profile-warapper-right-unfollow`).addClass('hidden')
-                    $('.profile-number-item.follower').text(response.data.followerCount)
-                    $('.profile-number-item.follower').append(
+                    $('.profile-number-item-follower').text(response.data.followerCount)
+                    $('.profile-number-item-follower').append(
                         `<br><p>Followers</p>`
                     )
                 }
@@ -105,8 +105,8 @@ document.addEventListener('turbolinks:load', () => {
                 if(response.data.status === 'ok') {
                     $(`.profile-warapper-right-follow`).addClass('hidden')
                     $(`.profile-warapper-right-unfollow`).removeClass('hidden')
-                    $('.profile-number-item.follower').text(response.data.followerCount)
-                    $('.profile-number-item.follower').append(
+                    $('.profile-number-item-follower').text(response.data.followerCount)
+                    $('.profile-number-item-follower').append(
                         `<br><p>Followers</p>`
                     )
                 }

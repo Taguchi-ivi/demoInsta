@@ -1,0 +1,17 @@
+.follow
+    .container
+        .follow-header-left
+            = link_to :back do
+                %i.fa-solid.fa-arrow-left-long
+        %h1.page-header= header_name
+        .follow-container
+            -# - @user.each do |user|
+            - users.each do |user|
+                .follow-container-item
+                    .follow-container-item-warapper
+                        .follow-container-item-left
+                            = link_to account_path(user) do
+                                = image_tag user.avatar_image(user)
+                        .follow-container-item-right
+                            %p.name= user.account
+                            %p.time Last seen 3 hours ago

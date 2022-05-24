@@ -3,20 +3,36 @@ import $ from 'jquery'
 // import axios from 'axios'
 import axios from 'modules/axios'
 
+const handleFollowDisplay = (hasFollowed) => {
+    // setSelector = $(`[data-article-id=${articleNum}]`)
+    // debugger
+    if (hasFollowed) {
+        $(`.profile-warapper-right-unfollow`).removeClass('hidden')
+    } else {
+        $(`.profile-warapper-right-follow`).removeClass('hidden')
+    }
+
+
+}
+
+const countUpdate = (res) => {
+    $('.profile-number-item.post').text(res.data.postCount)
+    $('.profile-number-item.post').append(
+        `<br><p>Posts</p>`
+    )
+    $('.profile-number-item-follower').text(res.data.followerCount)
+    $('.profile-number-item-follower').append(
+        `<br><p>Followers</p>`
+    )
+    $('.profile-number-item-following').text(res.data.followingCount)
+    $('.profile-number-item-following').append(
+        `<br><p>Following</p>`
+    )
+}
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('turbolinks:load', () => {
-    // window.alert('これでどうですか');
-    // console.log('hello world!!');
-    // debugger
-    // $('.profile-avatar').on('click', (e) => {
-    // $('#top-avatar-img').on('click', (e) => {
-        // window.alert('CLICK');
-        // var reader
-        // reader = new FileReader(); 
-        // reader.readAsDataURL(e.target.files[0]);
-        // debugger
-        // init();
         
         // userId取得、不要?
         const dataset = $('#profile-show').data()
@@ -102,35 +118,68 @@ document.addEventListener('turbolinks:load', () => {
             };
         }
         
-        // 
-        // IIFE - Immediately Invoked Function Expression
-        // https://stackoverflow.com/questions/18307078/jquery-best-practises-in-case-of-document-ready
-        // (
-        
-        // function (yourcode) {
-        //     "use strict";
-        //     // The global jQuery object is passed as a parameter
-        //     yourcode(window.jQuery, window, document);
-        // }(
-        
-        // function ($, window, document) {
-        //     "use strict";
-        //     // The $ is now locally scoped 
-        //     $(function () {
-        //         // The DOM is ready!
-        //         init();
-        //     });
-        
-        //     // The rest of your code goes here!
-        // }));
 
-
-
-        // axios.put('/profile')
-        //     .then((response) => {
-        //         console.log(response)
-        //     })
-    // })
-
+    // const dataset = $('#profile-show').data()
+    // const userId = dataset.userId
+    // const currentUserId = dataset.currentUserId
+    const hasFollowed = false
     
+    // debugger
+    axios.get(`/accounts/${userId}/hasfollow`)
+    .then((response) => {
+
+        // const hasLiked = response.data.hasLiked
+        // console.log(response)
+        // const hasFollowed = response.data.hasFollowed
+        
+        // debugger
+        handleFollowDisplay(response.data.hasFollowed)
+        countUpdate(response)
+    })
+    .catch((error) => {
+        console.log(error)
+        window.alert('失敗')
+    })
+
+    // フォローを解除する
+    $(`.profile-warapper-right-unfollow`).on('click', () => {
+        axios.post(`/accounts/${userId}/unfollows`)
+            .then((response) => {
+                // console.log(response)
+                if(response.data.status === 'ok') {
+                    $(`.profile-warapper-right-follow`).removeClass('hidden')
+                    $(`.profile-warapper-right-unfollow`).addClass('hidden')
+                    $('.profile-number-item-follower').text(response.data.followerCount)
+                    $('.profile-number-item-follower').append(
+                        `<br><p>Followers</p>`
+                    )
+                }
+            })
+            .catch((e) => {
+                window.alert('ERROR')
+                console.log(e)
+            })
+    })
+
+
+    // フォローする
+    $(`.profile-warapper-right-follow`).on('click', () => {
+        axios.post(`/accounts/${userId}/follows`)
+            .then((response) => {
+                // console.log(response)
+                if(response.data.status === 'ok') {
+                    $(`.profile-warapper-right-follow`).addClass('hidden')
+                    $(`.profile-warapper-right-unfollow`).removeClass('hidden')
+                    $('.profile-number-item-follower').text(response.data.followerCount)
+                    $('.profile-number-item-follower').append(
+                        `<br><p>Followers</p>`
+                    )
+                }
+            })
+            .catch((e) => {
+                window.alert('ERROR')
+                console.log(e)
+            })
+    })
+
 })

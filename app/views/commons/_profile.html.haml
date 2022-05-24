@@ -26,16 +26,18 @@
             = user.articles.count
             %br/
             %p Posts
-        .profile-number-item.follower
-            -# = '110'
-            = user.followers.count
-            %br/
-            %p Followers
-        .profile-number-item.following
-            -# = '44'
-            = user.followings.count
-            %br/
-            %p Following
+        = link_to account_followers_path(user), class: 'profile-number-item' do
+            .profile-number-item-follower
+                -# = '110'
+                = user.followers.count
+                %br/
+                %p Followers
+        = link_to account_followings_path(user), class: 'profile-number-item' do
+            .profile-number-item-following
+                -# = '44'
+                = user.followings.count
+                %br/
+                %p Following
     - i = 1
     .profile-content
         - user.articles.each do |article|
@@ -53,5 +55,5 @@
                     .profile-content-item
                         = image_tag image
                 - i += 1
-=  javascript_pack_tag 'imageUpdate'
-=  javascript_pack_tag 'follow'
+=  javascript_pack_tag 'profile'
+-# =  javascript_pack_tag 'follow'

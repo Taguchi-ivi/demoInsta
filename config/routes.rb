@@ -26,8 +26,15 @@ Rails.application.routes.draw do
   end
 
   resources :accounts, only: [:show] do
+    # ajax用
     resource :hasfollow, only: [:show]
-    resources :follows, only: [:create, :index]
+
+    resources :followings, only: [:index]
+    resources :followers, only: [:index]
+
+    # フォロー機能用
+    resources :follows, only: [:create]
+    # フォロー解除機能用
     resources :unfollows, only: [:create]
   end
 
