@@ -25,6 +25,19 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :index]
   end
 
+  resources :accounts, only: [:show] do
+    # ajax用
+    resource :hasfollow, only: [:show]
+
+    resources :followings, only: [:index]
+    resources :followers, only: [:index]
+
+    # フォロー機能用
+    resources :follows, only: [:create]
+    # フォロー解除機能用
+    resources :unfollows, only: [:create]
+  end
+
   # resource :profile, only: [:show, :update, :create, :destroy]
   resource :profile, only: [:show, :update]
 end

@@ -1,0 +1,63 @@
+@import './variables';
+
+.follow {
+
+    &-header-left {
+        position: fixed;
+        top: 50px;
+        left: 17px;
+    }
+
+    &-container {
+        margin: 20px 0;
+
+        &-item {
+            padding: 30px 0;
+            border-bottom: 1px solid #EEEEEE;
+
+            &:last-child{
+                border-bottom: none;
+            }
+
+            &-warapper {
+                display: flex;
+            }
+
+            &-left {
+                img {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 999px;
+
+                }
+            }
+
+            &-right {
+                margin-left: 3%;
+
+                .name {
+                    font-size: 14px;
+                    line-height: 16.41px;
+                    color: $black-font-color;
+                }
+
+                .time {
+                    margin-top: 4px;
+                    font-size: 12px;
+                    line-height: 18px;
+                    font-weight: 400;
+                    color: $usugray-font-color;
+                }
+            }
+            
+        }
+    }
+
+    &hr {
+        border: 1px solid #EEEEEE;
+    }
+    &hr:last-child{
+        display: none;
+    }
+
+}

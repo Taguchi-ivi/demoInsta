@@ -6,8 +6,7 @@
 @import 'profile';
 @import 'article';
 @import 'comment';
-
-
+@import 'follow';
 
 
 html {
@@ -71,7 +70,7 @@ a:hover {
 .header-logout {
     position: fixed;
     z-index: 20;
-    top: 30px;
+    top: 60px;
     right: 40px;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
     border-radius: 80px;
