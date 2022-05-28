@@ -7,6 +7,7 @@
 @import 'article';
 @import 'comment';
 @import 'follow';
+@import 'tabs';
 
 
 html {
@@ -74,10 +75,11 @@ a:hover {
     right: 40px;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.6);
     border-radius: 80px;
-    background-color: #b1bdd6;
+    background-color: $usublue-bgc;
     display: block;
     // padding: 10px 0;
     a {
+        
         display: block;
         padding: 10px 15px;
     }
