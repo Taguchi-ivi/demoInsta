@@ -1,0 +1,11 @@
+.container
+    .page-insta
+        = image_tag 'insta-mark.png'
+    = render 'commons/tabs'
+    - articles.each do |article|
+        = render 'commons/articles', article: article
+    .article-create
+        = link_to new_article_path do
+            %i.fa-solid.fa-circle-plus.fa-3x
+
+=  javascript_pack_tag 'articleIndex'

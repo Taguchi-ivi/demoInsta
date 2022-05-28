@@ -48,6 +48,9 @@ gem 'devise'
 # Serializer jsonデータを取得
 gem 'active_model_serializers'
 
+# viewの見た目部分のメソッドを定義する
+gem 'active_decorator'
+
 # 非同期処理
 gem 'sidekiq'
 

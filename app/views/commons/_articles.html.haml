@@ -1,0 +1,35 @@
+.article-item#article-index{ data: { article_id: article.id } }
+    .article-item-wrapper
+        .article-item-left
+            = link_to account_path(article.user) do
+                = image_tag article.user.avatar_image(article.user)
+        .article-item-right
+            %p.article-item-right-name=article.user.account
+            -# %p.article-item-right-time=article.updated_at
+            -# %time(datetime="#{article.created_at}")= time_ago_in_words(article.created_at)
+            %p.article-item-right-time=article.display_created_at
+    - if article.images.present?
+        .swiper
+            .swiper-wrapper
+                - article.images.each do |image|
+                    .swiper-slide 
+                        = image_tag image
+            .swiper-pagination
+            .swiper-button-prev
+            .swiper-button-next
+            .swiper-scrollbar
+    .article-item-wrapper.mt-mark
+        .article-item-mark
+            .article-item-mark-heart.hidden.active-heart
+                = image_tag 'heart-active.png'
+            .article-item-mark-heart.hidden.inactive-heart
+                = image_tag 'heart.png'
+        .article-item-mark
+            = link_to article_comments_path(article) do 
+                = image_tag 'comment-mark.png'
+        .article-item-mark
+
+            = link_to "https://twitter.com/intent/tweet?url=#{request.url}&text=#{article.content}" do
+                = image_tag 'link-mark.png'
+    .article-item-text
+        %p= article.content

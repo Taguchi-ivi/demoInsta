@@ -42,7 +42,6 @@ class User < ApplicationRecord
   # avatarをuserモデルに
   has_one_attached :avatar
 
-
   def has_liked?(article)
     likes.exists?(article_id: article.id)
   end
@@ -67,15 +66,6 @@ class User < ApplicationRecord
   #  フォローしているか確認する
   def has_followed?(user)
     following_relationships.exists?(following_id: user.id)
-  end
-
-  def avatar_image(user)
-    current_user = user
-    if current_user&.avatar&.attached?
-      current_user.avatar
-    else
-      'def-avatar.png'
-    end
   end
 
   private 

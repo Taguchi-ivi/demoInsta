@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create, :index]
   end
 
+  resource :timeline, only:[:show]
+
   resources :accounts, only: [:show] do
     # ajax用
     resource :hasfollow, only: [:show]
