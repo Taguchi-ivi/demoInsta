@@ -63,6 +63,12 @@ group :development, :test do
 
   #デバッグ
   gem 'pry-byebug'
+
+  # テストを実施
+  gem 'rspec-rails'
+
+  gem 'factory_bot_rails'
+  
 end
 
 group :development do
