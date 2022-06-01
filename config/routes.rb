@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   resource :timeline, only:[:show]
 
-  resources :accounts, only: [:show] do
+  resources :accounts, only: [:show, :edit] do
     # ajax用
     resource :hasfollow, only: [:show]
 

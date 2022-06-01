@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
     
     def after_sign_out_path_for(resource)
         new_user_session_path # ログアウト後に遷移するpathを設定
+        # root_path
     end
 
     def set_csrf_token_header

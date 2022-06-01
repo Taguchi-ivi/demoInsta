@@ -37,7 +37,8 @@ class ProfilesController < ApplicationController
         # end
 
         if current_user.update_attributes(avatar_params)
-            render json: { a: 'aaaa'}
+            # render json: { a: 'aaaa'}
+            render json: { status: 'ok'}
         else
             flash.now[:error] = '更新できませんでした'
             render :show
