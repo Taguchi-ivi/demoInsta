@@ -39,6 +39,7 @@ const accountHasFollowGet = (userId) => {
         console.log(error)
         window.alert('失敗')
     })
+
 }
 
 const accountFollowingEvent = (userId) => {
@@ -62,9 +63,12 @@ const accountFollowingEvent = (userId) => {
                 console.log(e)
             })
     })
+
+
 }
 
 const accountUnFollowingEvent = (userId) => {
+    
     // フォローを解除する
     $(`.profile-warapper-right-unfollow`).on('click', () => {
         axios.post(`/accounts/${userId}/unfollows`)
@@ -84,6 +88,7 @@ const accountUnFollowingEvent = (userId) => {
                 console.log(e)
             })
     })
+
 }
 
 // document.addEventListener('turbolinks:load', () => {

@@ -25,7 +25,7 @@ class Comment < ApplicationRecord
     private 
         def send_email
             comment = self
-            binding.pry
+            # binding.pry
             users = User.all
             users.each do |user|
                 if self.content.include?("@#{user.account}")

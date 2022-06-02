@@ -1,59 +1,64 @@
 
-.container#profile-show{ data: {user_id: user.id, current_user_id: current_user.id}}
-    .profile-warapper
-        .profile-warapper-left
-            = link_to :back do
-                %i.fa-solid.fa-arrow-left-long
-        %h1.profile-warapper-center= user.account
-        -# - if current_page?(account_path(user)) 
-        - if user != current_user
-            .profile-warapper-right
-                - if current_user.present?
-                    -# = link_to 'UnFollow', account_unfollows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-unfollow hidden'
-                    -# = link_to 'Follow', account_follows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-follow hidden'
-                    %p.profile-warapper-right-unfollow.hidden UnFollow
-                    %p.profile-warapper-right-follow.hidden Follow
-    .page-header-right
-    - if user_signed_in? 
-        -if current_page?(profile_path)
-            .header-logout
-                = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete'}
-    .profile-avatar
-        = image_tag user.avatar_image(user),id: 'top-avatar-img',  data: { type: 'editable' }
-    .profile-number
-        .profile-number-item.post
-            -# = '44'
-            = user.articles.count
+-# .container#profile-show{ data: {user_id: user.id, current_user_id: current_user.id}}
+- if current_user.present?
+    .container#profile-show{ data: {user_id: user.id , current_user_id: current_user.id}}
+- else
+    .container#profile-show{ data: {user_id: user.id}}
+.profile-warapper
+    .profile-warapper-left
+        = link_to :back do
+            %i.fa-solid.fa-arrow-left-long
+    %h1.profile-warapper-center= user.account
+    -# - if user != current_user
+    - if current_page?(account_path(user)) 
+        .profile-warapper-right
+            - if current_user.present?
+                -# = link_to 'UnFollow', account_unfollows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-unfollow hidden'
+                -# = link_to 'Follow', account_follows_path(user), data: {method: 'post'}, class: 'profile-warapper-right-follow hidden'
+                %p.profile-warapper-right-unfollow.hidden UnFollow
+                %p.profile-warapper-right-follow.hidden Follow
+.page-header-right
+-# - if user_signed_in? 
+- if user.signed_in? 
+    -if current_page?(profile_path)
+        .header-logout
+            = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete'}
+.profile-avatar
+    = image_tag user.avatar_image(user),id: 'top-avatar-img',  data: { type: 'editable' }
+.profile-number
+    .profile-number-item.post
+        -# = '44'
+        = user.articles.count
+        %br/
+        %p Posts
+    = link_to account_followers_path(user), class: 'profile-number-item' do
+        .profile-number-item-follower
+            -# = '110'
+            = user.followers.count
             %br/
-            %p Posts
-        = link_to account_followers_path(user), class: 'profile-number-item' do
-            .profile-number-item-follower
-                -# = '110'
-                = user.followers.count
-                %br/
-                %p Followers
-        = link_to account_followings_path(user), class: 'profile-number-item' do
-            .profile-number-item-following
-                -# = '44'
-                = user.followings.count
-                %br/
-                %p Following
-    - i = 1
-    .profile-content
-        - user.articles.each do |article|
+            %p Followers
+    = link_to account_followings_path(user), class: 'profile-number-item' do
+        .profile-number-item-following
+            -# = '44'
+            = user.followings.count
+            %br/
+            %p Following
+- i = 1
+.profile-content
+    - user.articles.each do |article|
+        - break if i == 7
+        -# - if article.images.present?
+        - article.images.each do |image|
             - break if i == 7
-            -# - if article.images.present?
-            - article.images.each do |image|
-                - break if i == 7
-                - if i == 1
-                    .profile-content-item.big-box-left
-                        = image_tag image
-                - elsif i == 6
-                    .profile-content-item.big-box-right
-                        = image_tag image
-                - else
-                    .profile-content-item
-                        = image_tag image
-                - i += 1
+            - if i == 1
+                .profile-content-item.big-box-left
+                    = image_tag image
+            - elsif i == 6
+                .profile-content-item.big-box-right
+                    = image_tag image
+            - else
+                .profile-content-item
+                    = image_tag image
+            - i += 1
 =  javascript_pack_tag 'profile'
 -# =  javascript_pack_tag 'follow'
