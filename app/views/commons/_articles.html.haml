@@ -25,7 +25,7 @@
             .article-item-mark-heart.hidden.inactive-heart
                 = image_tag 'heart.png'
         .article-item-mark
-            = link_to article_comments_path(article) do 
+            = link_to article_comments_path(article), id: 'comment-link'  do 
                 = image_tag 'comment-mark.png'
         .article-item-mark
 
