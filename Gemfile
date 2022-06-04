@@ -54,6 +54,10 @@ gem 'active_decorator'
 # 非同期処理
 gem 'sidekiq'
 
+# AWS S3
+gem 'aws-sdk-s3', require: false
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -68,6 +72,8 @@ group :development, :test do
   gem 'rspec-rails'
 
   gem 'factory_bot_rails'
+
+  gem 'dotenv-rails'
   
 end
 

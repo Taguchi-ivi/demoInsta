@@ -1,0 +1,16 @@
+{
+    "name": "demoInsta app",
+    "description": "This is demoInsta",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/Taguchi-ivi/demoInsta",
+    "env": {},
+    "addons": [
+        "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+        "url": "heroku/nodejs"
+    }, {
+        "url": "heroku/ruby"
+    }]
+}
