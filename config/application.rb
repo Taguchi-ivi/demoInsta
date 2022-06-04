@@ -24,10 +24,11 @@ module DemoInsta
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    Bundler.require(*Rails.groups)
-    Dotenv::Railtie.load
-    # HOSTNAME = ENV['HOSTNAME']
-
+    if Rails.env.development? || Rails.env.test?
+      Bundler.require(*Rails.groups)
+      Dotenv::Railtie.load
+      # HOSTNAME = ENV['HOSTNAME']
+    end
     # 追加
     # config.action_controller.forgery_protection_origin_check = false
 
